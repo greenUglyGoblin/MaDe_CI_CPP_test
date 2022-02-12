@@ -17,20 +17,27 @@ add_executable(MaDe_CI_CPP_test
 
 
 # GTest part
-# enable_testing()
-# include(GoogleTest)
+include(FetchContent)
+FetchContent_Declare(gtest
+    QUIET
+    URL https://github.com/google/googletest/archive/release-1.10.0.tar.gz
+)
+# configure build of googletest
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(gtest)
 
-# include_directories(/usr/local/include) # gtest header
+enable_testing()
+include(GoogleTest)
 
-# add_executable(UTests
-#     # unit tests
-#     test/ut_main.cpp
-# )
+add_executable(UTests
+    # unit tests
+    test/ut_main.cpp
+)
 
-# target_link_libraries(
-#     UTests
-#     /usr/local/lib/libgtest.a      # gtest lib
-#     /usr/local/lib/libgtest_main.a # gtest lib
-# )
+target_link_libraries(
+    UTests
+    gtest_main
+)
 
-# gtest_discover_tests(UTests)
+gtest_discover_tests(UTests)
