@@ -3,6 +3,8 @@
 int main()
 {
     std::cout << "MaDe CI test" << std::endl;
-aaa
+
+    std::cout << "naprawilem problem xd" << std::endl;
+
     return 0;
 }
