@@ -1,11 +1,36 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(MaDe_CI_CPP_test VERSION 0.1.0)
 
-include(CTest)
-enable_testing()
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MaDe_CI_CPP_test main.cpp)
+# project part
+include_directories(inc)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+add_executable(MaDe_CI_CPP_test
+    # src
+    src/main.cpp
+    src/functions.cpp
+
+    # headers
+    inc/macros.h
+)
+
+
+# GTest part
+# enable_testing()
+# include(GoogleTest)
+
+# include_directories(/usr/local/include) # gtest header
+
+# add_executable(UTests
+#     # unit tests
+#     test/ut_main.cpp
+# )
+
+# target_link_libraries(
+#     UTests
+#     /usr/local/lib/libgtest.a      # gtest lib
+#     /usr/local/lib/libgtest_main.a # gtest lib
+# )
+
+# gtest_discover_tests(UTests)
