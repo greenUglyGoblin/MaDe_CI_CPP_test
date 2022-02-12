@@ -1,0 +1,4 @@
+# basic gitignore
+
+build
+.vscode
