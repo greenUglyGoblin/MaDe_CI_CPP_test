@@ -17,21 +17,20 @@ add_executable(MaDe_CI_CPP_test
 
 
 # GTest part
-enable_testing()
-find_package(GTest REQUIRED)
-include(GoogleTest)
+# enable_testing()
+# include(GoogleTest)
 
-include_directories(/usr/local/include) # gtest header
+# include_directories(/usr/local/include) # gtest header
 
-add_executable(UTests
-    # unit tests
-    test/ut_main.cpp
-)
+# add_executable(UTests
+#     # unit tests
+#     test/ut_main.cpp
+# )
 
-target_link_libraries(
-    UTests
-    /usr/local/lib/libgtest.a      # gtest lib
-    /usr/local/lib/libgtest_main.a # gtest lib
-)
+# target_link_libraries(
+#     UTests
+#     /usr/local/lib/libgtest.a      # gtest lib
+#     /usr/local/lib/libgtest_main.a # gtest lib
+# )
 
-gtest_discover_tests(UTests)
+# gtest_discover_tests(UTests)
