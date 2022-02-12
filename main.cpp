@@ -6,5 +6,5 @@ int main()
 
     std::cout << "naprawilem problem xd" << std::endl;
     
-    return 0;
+    return 0;zzzz
 }
