@@ -9,6 +9,6 @@ TEST(jan, jan1)
 
 TEST(jan, jan2)
 {
-    EXPECT_EQ(2, 2);
+    EXPECT_EQ(2, 1);
 }
 
